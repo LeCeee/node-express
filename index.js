@@ -10,11 +10,14 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 
 const dishRouter = require('./routes/dishRouter.js');
-app.use('/dishes',dishRouter);
+//mounting
+app.use('/leaderes',dishRouter);
 
 const promotionsRouter = require('./routes/promotionsRouter.js');
 app.use('/promotions', promotionsRouter);
 
+const leaderRouter = require('./routes/leaderRouter');
+app.use('/leaders',leaderRouter);
 
 app.use(express.static(__dirname + '/public'));
 app.use((req,res,next) => {
