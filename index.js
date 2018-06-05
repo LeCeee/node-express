@@ -12,6 +12,10 @@ app.use(bodyParser.json());
 const dishRouter = require('./routes/dishRouter.js');
 app.use('/dishes',dishRouter);
 
+const promotionsRouter = require('./routes/promotionsRouter.js');
+app.use('/promotions', promotionsRouter);
+
+
 app.use(express.static(__dirname + '/public'));
 app.use((req,res,next) => {
     console.log(req.headers);
